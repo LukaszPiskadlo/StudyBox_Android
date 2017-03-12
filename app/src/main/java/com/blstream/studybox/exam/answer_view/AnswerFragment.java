@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.blstream.studybox.R;
+import com.blstream.studybox.model.database.Card;
 import com.hannesdorfmann.mosby.mvp.viewstate.MvpViewStateFragment;
 import com.hannesdorfmann.mosby.mvp.viewstate.ViewState;
 import com.squareup.picasso.Picasso;
@@ -21,9 +22,9 @@ import butterknife.OnClick;
 public class AnswerFragment extends MvpViewStateFragment<AnswerView, AnswerPresenter>
         implements AnswerView {
 
-    private static final String TAG_CARD_ID = "cardId";
+    private static final String TAG_CARD = "card";
 
-    private String cardId;
+    private Card card;
 
     @Bind(R.id.answer)
     TextView answerText;
@@ -38,7 +39,7 @@ public class AnswerFragment extends MvpViewStateFragment<AnswerView, AnswerPrese
 
         Bundle args = getArguments();
         if (args != null) {
-            cardId = args.getString(TAG_CARD_ID);
+            card = args.getParcelable(TAG_CARD);
         }
     }
 
@@ -56,7 +57,7 @@ public class AnswerFragment extends MvpViewStateFragment<AnswerView, AnswerPrese
 
     @Override
     public void onNewViewStateInstance() {
-        presenter.loadAnswer(cardId);
+        presenter.loadAnswer(card);
     }
 
     @Override

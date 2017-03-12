@@ -20,10 +20,10 @@ import java.util.List;
 
 public class ExamPresenter extends MvpBasePresenter<ExamView> {
 
-    protected int totalCards;
-    protected int correctAnswers;
-    protected int currentCardNumber;
-    protected String currentCardId;
+    private int totalCards;
+    private int correctAnswers;
+    private int currentCardNumber;
+    private Card currentCard;
     private ExamManager examManager;
     private boolean isInExamMode;
 
@@ -55,11 +55,11 @@ public class ExamPresenter extends MvpBasePresenter<ExamView> {
     protected void initExam() {
         totalCards = examManager.getTotalCardsNumber();
         currentCardNumber = examManager.getCurrentCardNumber();
-        currentCardId = examManager.getCurrentCardId();
+        currentCard = examManager.getCurrentCard();
         if (isViewAttached()) {
             //noinspection ConstantConditions
             getView().setCardCounter(currentCardNumber, totalCards);
-            getView().showQuestion(currentCardId);
+            getView().showQuestion(currentCard);
         }
     }
 
@@ -76,7 +76,7 @@ public class ExamPresenter extends MvpBasePresenter<ExamView> {
     public void onShowAnswerEvent(ShowAnswerEvent event) {
         if (isViewAttached()) {
             //noinspection ConstantConditions
-            getView().showAnswer(currentCardId);
+            getView().showAnswer(currentCard);
         }
     }
 
@@ -118,10 +118,10 @@ public class ExamPresenter extends MvpBasePresenter<ExamView> {
 
     protected void moveToNextCard() {
         if (examManager.setNextCard()) {
-            currentCardId = examManager.getCurrentCardId();
+            currentCard = examManager.getCurrentCard();
             if (isViewAttached()) {
                 //noinspection ConstantConditions
-                getView().showQuestion(currentCardId);
+                getView().showQuestion(currentCard);
                 updateCardCounter();
             }
         } else {

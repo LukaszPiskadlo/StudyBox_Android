@@ -19,6 +19,7 @@ import android.widget.TextView;
 import android.widget.ViewSwitcher;
 
 import com.blstream.studybox.R;
+import com.blstream.studybox.model.database.Card;
 import com.hannesdorfmann.mosby.mvp.viewstate.MvpViewStateFragment;
 import com.hannesdorfmann.mosby.mvp.viewstate.ViewState;
 import com.squareup.picasso.Picasso;
@@ -31,11 +32,11 @@ import butterknife.OnClick;
 public class QuestionFragment extends MvpViewStateFragment<QuestionView, QuestionPresenter>
         implements QuestionView {
 
-    private static final String TAG_CARD_ID = "cardId";
+    private static final String TAG_CARD = "card";
     private static final String TAG_QUESTION = "Pytanie";
     private static final String TAG_PROMPT = "Podpowiedź";
 
-    private String cardId;
+    private Card card;
     private int promptPosition;
     private Animation scale_up, scale_down;
     private Animation fade_in, fade_out;
@@ -71,7 +72,7 @@ public class QuestionFragment extends MvpViewStateFragment<QuestionView, Questio
 
         Bundle args = getArguments();
         if (args != null) {
-            cardId = args.getString(TAG_CARD_ID);
+            card = args.getParcelable(TAG_CARD);
         }
     }
 
@@ -89,7 +90,7 @@ public class QuestionFragment extends MvpViewStateFragment<QuestionView, Questio
 
     @Override
     public void onNewViewStateInstance() {
-        presenter.loadQuestion(cardId);
+        presenter.loadQuestion(card);
     }
 
     @Override

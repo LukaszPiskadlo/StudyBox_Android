@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+
 import com.blstream.studybox.R;
 
 
@@ -51,7 +52,6 @@ public class DebugHelperUsageExample extends AppCompatActivity {
         boolean isDebugBuild = DebugHelper.isDebuggable();
         boolean isLoggerOn   = DebugHelper.isLoggerInitialized();
         boolean isSMOn       = DebugHelper.isStrictModeInitialized();
-        boolean isLCOn       = DebugHelper.isLeakCanaryInitialized();
         // =============== How to use helper methods =====
 
 

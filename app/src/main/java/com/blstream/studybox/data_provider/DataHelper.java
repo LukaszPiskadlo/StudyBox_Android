@@ -38,7 +38,6 @@ public class DataHelper implements DataProvider {
                     @Override
                     public void onSuccess(List<Deck> response) {
                         setCurrentDecks(response);
-                        saveDecksToDataBase(response);
                         listener.OnDecksReceived(response, true);
                     }
 
@@ -79,7 +78,6 @@ public class DataHelper implements DataProvider {
         RestClientManager.getFlashcards(deckId, randomAmount, new RequestCallback<>(new RequestListener<List<Card>>() {
             @Override
             public void onSuccess(List<Card> response) {
-                saveCardsToDataBase(response);
                 listener.OnCardsReceived(response);
             }
 
@@ -174,17 +172,6 @@ public class DataHelper implements DataProvider {
         this.currentDecks = currentDecks;
     }
 
-    private void saveDecksToDataBase(List<Deck> decks) {
-        for (Deck deck : decks) {
-            deck.save();
-        }
-    }
-
-    private void saveCardsToDataBase(List<Card> cards) {
-        for (Card card : cards) {
-            card.save();
-        }
-    }
 
     public boolean isNullOrEmpty(final Collection<?> c) {
         return c == null || c.isEmpty();

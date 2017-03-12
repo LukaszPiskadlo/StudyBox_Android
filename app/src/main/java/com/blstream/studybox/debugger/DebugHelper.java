@@ -8,7 +8,6 @@ import android.os.StrictMode.VmPolicy;
 
 import com.orhanobut.logger.LogLevel;
 import com.orhanobut.logger.Logger;
-import com.squareup.leakcanary.LeakCanary;
 
 import static android.os.Build.VERSION.SDK_INT;
 import static android.os.Build.VERSION_CODES.GINGERBREAD;
@@ -23,7 +22,6 @@ public class DebugHelper {
     private static final String TAG = "STUDYBOXDEV";
 
     private static final boolean ENABLE_STRICT_MODE        = true;
-    private static final boolean ENABLE_LEAK_CANARY        = true;
     private static final boolean STRICT_MODE_KILL_ON_ERROR = false;
     private static final int     METHOD_COUNT              = 2;
     private static final int     METHOD_OFFSET             = 2;
@@ -31,7 +29,6 @@ public class DebugHelper {
     private static boolean isDebuggable;
     private static boolean loggerInitialized;
     private static boolean strictModeInitialized;
-    private static boolean leakCanaryInitialized;
 
     /**
      * Activates DebugHelper
@@ -45,9 +42,6 @@ public class DebugHelper {
         if (isDebuggable()) {
             if (ENABLE_STRICT_MODE) {
                 initializeStrictMode();
-            }
-            if (ENABLE_LEAK_CANARY) {
-                initializeLeakCanary(application);
             }
         }
     }
@@ -124,13 +118,6 @@ public class DebugHelper {
     public static boolean isStrictModeInitialized() {
         return strictModeInitialized;
     }
-    /**
-     * Check whether or not LeakCanary was initialized
-     * @return boolean true if LeakCanary was initialized, false if not
-     */
-    public static boolean isLeakCanaryInitialized() {
-        return leakCanaryInitialized;
-    }
 
 
     // =============== Initialization methods =====
@@ -172,12 +159,6 @@ public class DebugHelper {
 
                 strictModeInitialized = true;
             }
-        }
-    }
-    private static void initializeLeakCanary(Application application) {
-        if (!leakCanaryInitialized) {
-            LeakCanary.install(application);
-            leakCanaryInitialized = true;
         }
     }
 

@@ -28,6 +28,7 @@ import com.blstream.studybox.exam.exam_view.ExamPresenter;
 import com.blstream.studybox.exam.exam_view.ExamView;
 import com.blstream.studybox.exam.exam_view.ExamViewState;
 import com.blstream.studybox.exam.question_view.QuestionFragment;
+import com.blstream.studybox.model.database.Card;
 import com.hannesdorfmann.mosby.mvp.viewstate.ViewState;
 
 import butterknife.Bind;
@@ -40,7 +41,7 @@ public class BaseExamActivity extends BaseViewStateActivity<ExamView, ExamPresen
     private static final String TAG_IN_EXAM = "inExam";
     private static final String TAG_DECK_NAME = "deckName";
     private static final String TAG_DECK_ID = "deckId";
-    private static final String TAG_CARD_ID = "cardId";
+    private static final String TAG_CARD = "card";
     private static final String TAG_RANDOM_CARDS_AMOUNT = "randomAmount";
     private static final String TAG_IS_RANDOM_EXAM = "isRandomExam";
     private static final int ANIMATION_DURATION = 1000;
@@ -149,18 +150,18 @@ public class BaseExamActivity extends BaseViewStateActivity<ExamView, ExamPresen
     }
 
     @Override
-    public void showQuestion(String cardId) {
+    public void showQuestion(Card card) {
         QuestionFragment questionFragment = new QuestionFragment();
-        replaceFragment(questionFragment, cardId);
+        replaceFragment(questionFragment, card);
     }
 
-    public void showAnswer(String cardId) {
+    public void showAnswer(Card card) {
         if (isInExam) {
             AnswerFragment answerFragment = new AnswerFragment();
-            replaceFragment(answerFragment, cardId);
+            replaceFragment(answerFragment, card);
         } else {
             StudyAnswerFragment answerFragment = new StudyAnswerFragment();
-            replaceFragment(answerFragment, cardId);
+            replaceFragment(answerFragment, card);
         }
     }
 
@@ -179,9 +180,9 @@ public class BaseExamActivity extends BaseViewStateActivity<ExamView, ExamPresen
         }
     }
 
-    protected void replaceFragment(Fragment fragment, String cardId) {
+    protected void replaceFragment(Fragment fragment, Card card) {
         Bundle args = new Bundle();
-        args.putString(TAG_CARD_ID, cardId);
+        args.putParcelable(TAG_CARD, card);
         fragment.setArguments(args);
 
         getSupportFragmentManager().beginTransaction()

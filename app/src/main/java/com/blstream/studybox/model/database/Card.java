@@ -3,50 +3,27 @@ package com.blstream.studybox.model.database;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.activeandroid.Model;
-import com.activeandroid.annotation.Column;
-import com.activeandroid.annotation.Table;
-import com.activeandroid.query.Select;
 import com.google.gson.annotations.Expose;
 
-import java.util.List;
-
-@Table(name = "Cards")
-public class Card extends Model implements Parcelable{
+public class Card implements Parcelable {
 
     @Expose
-    @Column(name = "flashcardId", unique = true, onUniqueConflict = Column.ConflictAction.REPLACE)
     public String id;
 
     @Expose
-    @Column(name = "question")
     public String question;
 
     @Expose
-    @Column(name = "answer")
     public String answer;
 
     @Expose
-    @Column(name = "deckId")
     public String deckId;
-
-    public Card() {
-        super();
-    }
 
     public Card(String id, String question, String answer, String deckId) {
         this.id = id;
         this.question = question;
         this.answer = answer;
         this.deckId = deckId;
-    }
-
-    public static List<Card> all() {
-        return new Select().from(Card.class).execute();
-    }
-
-    public static Card getCardById(String id) {
-        return new Select().from(Card.class).where("flashcardId = ?", id).executeSingle();
     }
 
     public String getDeckId() {

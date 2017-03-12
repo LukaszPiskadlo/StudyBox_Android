@@ -25,8 +25,8 @@ public class QuestionPresenter extends MvpBasePresenter<QuestionView> {
         prompts = new ArrayList<>();
     }
 
-    public void loadQuestion(String cardId) {
-        card = Card.getCardById(cardId);
+    public void loadQuestion(Card card) {
+        this.card = card;
         showQuestion();
         loadPrompts();
     }

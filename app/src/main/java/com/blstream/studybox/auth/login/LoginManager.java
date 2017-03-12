@@ -4,8 +4,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Resources;
 
-import com.blstream.studybox.Application;
 import com.blstream.studybox.R;
+import com.blstream.studybox.StudyBoxApp;
 import com.blstream.studybox.model.AuthCredentials;
 
 public class LoginManager implements LoginInterface {
@@ -23,7 +23,7 @@ public class LoginManager implements LoginInterface {
     private Resources resources;
 
     public LoginManager() {
-        Context context = Application.getContext();
+        Context context = StudyBoxApp.getContext();
         preferences = context.getSharedPreferences(LOGIN_PREF_FILE, Context.MODE_PRIVATE);
         resources = context.getResources();
     }

@@ -12,8 +12,7 @@ import org.greenrobot.eventbus.EventBus;
 
 public class AnswerPresenter extends MvpBasePresenter<AnswerView> {
 
-    public void loadAnswer(String cardId) {
-        Card card = Card.getCardById(cardId);
+    public void loadAnswer(Card card) {
         showAnswer(card);
     }
 

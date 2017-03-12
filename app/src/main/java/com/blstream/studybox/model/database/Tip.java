@@ -3,39 +3,23 @@ package com.blstream.studybox.model.database;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-import com.activeandroid.Model;
-import com.activeandroid.annotation.Column;
-import com.activeandroid.query.Select;
 import com.google.gson.annotations.Expose;
 
-import java.util.List;
-
-public class Tip extends Model implements Parcelable {
+public class Tip implements Parcelable {
 
     @Expose
-    @Column(name = "idCard")
     public String idCard;
 
     @Expose
-    @Column(name = "essence")
     public String essence;
 
     @Expose
-    @Column(name = "difficult")
     public int difficult;
-
-    public Tip() {
-        super();
-    }
 
     public Tip(String idCard, String essence, int difficult) {
         this.idCard = idCard;
         this.essence = essence;
         this.difficult = difficult;
-    }
-
-    public static List<Tip> all() {
-        return new Select().from(Tip.class).execute();
     }
 
     public String getIdCard() {

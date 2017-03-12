@@ -1,12 +1,13 @@
 package com.blstream.studybox;
 
+import android.app.Application;
 import android.content.Context;
 
 import com.blstream.studybox.debugger.DebugHelper;
 
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
-public class Application extends com.activeandroid.app.Application {
+public class StudyBoxApp extends Application {
 
     private static Context context;
 
