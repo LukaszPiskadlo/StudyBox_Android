@@ -50,7 +50,7 @@
         </activity>
 
         <activity
-            android:name=".exam.ExamActivity"
+            android:name=".exam.exam_view.ExamActivity"
             android:label="@string/title_activity_exam"
             android:theme="@style/StudyBoxTheme" />
         <activity

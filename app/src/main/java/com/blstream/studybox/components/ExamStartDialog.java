@@ -19,7 +19,7 @@ import android.view.Window;
 import android.widget.Button;
 
 import com.blstream.studybox.R;
-import com.blstream.studybox.exam.ExamActivity;
+import com.blstream.studybox.exam.exam_view.ExamActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;

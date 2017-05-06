@@ -1,4 +1,4 @@
-package com.blstream.studybox.exam;
+package com.blstream.studybox.exam.exam_view;
 
 import android.animation.Animator;
 import android.annotation.TargetApi;
@@ -21,11 +21,9 @@ import com.blstream.studybox.R;
 import com.blstream.studybox.base.BaseViewStateActivity;
 import com.blstream.studybox.components.DrawerAdapter;
 import com.blstream.studybox.components.StudyRestartDialog;
+import com.blstream.studybox.exam.ResultDialogFragment;
 import com.blstream.studybox.exam.answer_view.AnswerFragment;
 import com.blstream.studybox.exam.answer_view.StudyAnswerFragment;
-import com.blstream.studybox.exam.exam_view.ExamPresenter;
-import com.blstream.studybox.exam.exam_view.ExamView;
-import com.blstream.studybox.exam.exam_view.ExamViewState;
 import com.blstream.studybox.exam.question_view.QuestionFragment;
 import com.blstream.studybox.model.database.Card;
 import com.hannesdorfmann.mosby.mvp.viewstate.ViewState;
