@@ -17,14 +17,14 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.blstream.studybox.R;
-import com.blstream.studybox.activities.BaseExamActivity;
-import com.blstream.studybox.activities.DecksActivity;
-import com.blstream.studybox.activities.LoginActivity;
 import com.blstream.studybox.auth.login.LoginInterface;
 import com.blstream.studybox.auth.login.LoginManager;
+import com.blstream.studybox.auth.login_view.LoginActivity;
 import com.blstream.studybox.data_provider.DataHelper;
 import com.blstream.studybox.data_provider.DataProvider;
 import com.blstream.studybox.debugger.DebugHelper;
+import com.blstream.studybox.decks_view.DecksActivity;
+import com.blstream.studybox.exam.ExamActivity;
 import com.blstream.studybox.model.database.Deck;
 
 public class DrawerAdapter implements NavigationView.OnNavigationItemSelectedListener, DataProvider.OnDecksReceivedListener<Deck> {
@@ -143,7 +143,7 @@ public class DrawerAdapter implements NavigationView.OnNavigationItemSelectedLis
     }
 
     private void startExam(final String deckId, final String deckName, boolean isExam, boolean isRandomDeckExam) {
-        Intent intent = new Intent(context, BaseExamActivity.class);
+        Intent intent = new Intent(context, ExamActivity.class);
         intent.putExtra(TAG_DECK_ID, deckId);
         intent.putExtra(TAG_DECK_NAME, deckName);
         intent.putExtra(TAG_IN_EXAM, isExam);

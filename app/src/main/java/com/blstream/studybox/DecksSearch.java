@@ -14,8 +14,8 @@ import android.view.inputmethod.EditorInfo;
 import android.widget.AutoCompleteTextView;
 import android.widget.ImageView;
 
-import com.blstream.studybox.activities.DecksActivity;
 import com.blstream.studybox.debugger.DebugHelper;
+import com.blstream.studybox.decks_view.DecksActivity;
 
 
 public class DecksSearch implements SearchView.OnQueryTextListener {

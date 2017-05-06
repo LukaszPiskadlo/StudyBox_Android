@@ -1,4 +1,4 @@
-package com.blstream.studybox.activities;
+package com.blstream.studybox.exam;
 
 import android.animation.Animator;
 import android.annotation.TargetApi;
@@ -21,7 +21,6 @@ import com.blstream.studybox.R;
 import com.blstream.studybox.base.BaseViewStateActivity;
 import com.blstream.studybox.components.DrawerAdapter;
 import com.blstream.studybox.components.StudyRestartDialog;
-import com.blstream.studybox.exam.ResultDialogFragment;
 import com.blstream.studybox.exam.answer_view.AnswerFragment;
 import com.blstream.studybox.exam.answer_view.StudyAnswerFragment;
 import com.blstream.studybox.exam.exam_view.ExamPresenter;
@@ -34,7 +33,7 @@ import com.hannesdorfmann.mosby.mvp.viewstate.ViewState;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 
-public class BaseExamActivity extends BaseViewStateActivity<ExamView, ExamPresenter>
+public class ExamActivity extends BaseViewStateActivity<ExamView, ExamPresenter>
         implements ExamView {
 
     private static final String TAG_RESULT = "result";

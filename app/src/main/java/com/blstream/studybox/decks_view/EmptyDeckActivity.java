@@ -1,4 +1,4 @@
-package com.blstream.studybox.activities;
+package com.blstream.studybox.decks_view;
 
 import android.content.Context;
 import android.content.Intent;

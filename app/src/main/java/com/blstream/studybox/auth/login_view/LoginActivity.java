@@ -1,4 +1,4 @@
-package com.blstream.studybox.activities;
+package com.blstream.studybox.auth.login_view;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,9 +11,9 @@ import android.widget.TextView;
 
 import com.blstream.studybox.R;
 import com.blstream.studybox.auth.BaseAuthViewState;
-import com.blstream.studybox.auth.login_view.LoginPresenter;
-import com.blstream.studybox.auth.login_view.LoginView;
+import com.blstream.studybox.auth.registration_view.RegistrationActivity;
 import com.blstream.studybox.base.BaseAuthActivity;
+import com.blstream.studybox.decks_view.DecksActivity;
 import com.blstream.studybox.model.AuthCredentials;
 import com.hannesdorfmann.mosby.mvp.viewstate.ViewState;
 

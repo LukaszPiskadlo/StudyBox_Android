@@ -19,7 +19,7 @@ import android.view.Window;
 import android.widget.Button;
 
 import com.blstream.studybox.R;
-import com.blstream.studybox.activities.BaseExamActivity;
+import com.blstream.studybox.exam.ExamActivity;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -104,7 +104,7 @@ public class ExamStartDialog extends DialogFragment {
 
     private void setUpTest(View view, boolean isExam) {
         Context context = getContext();
-        Intent intent = new Intent(context, BaseExamActivity.class);
+        Intent intent = new Intent(context, ExamActivity.class);
         intent.putExtra(TAG_DECK_ID, deckId);
         intent.putExtra(TAG_DECK_NAME, deckName);
         intent.putExtra(TAG_IN_EXAM, isExam);

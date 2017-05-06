@@ -25,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".auth.login_view.LoginActivity"
             android:windowSoftInputMode="stateAlwaysHidden"
             android:theme="@style/NoDrawerTheme">
             <intent-filter>
@@ -35,7 +35,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.DecksActivity"
+            android:name=".decks_view.DecksActivity"
             android:label="@string/title_activity_decks"
             android:launchMode="singleTop"
             android:theme="@style/StudyBoxTheme">
@@ -50,11 +50,11 @@
         </activity>
 
         <activity
-            android:name=".activities.BaseExamActivity"
+            android:name=".exam.ExamActivity"
             android:label="@string/title_activity_exam"
             android:theme="@style/StudyBoxTheme" />
         <activity
-            android:name=".activities.RegistrationActivity"
+            android:name=".auth.registration_view.RegistrationActivity"
             android:label="@string/title_activity_registration"
             android:windowSoftInputMode="stateAlwaysHidden"
             android:theme="@style/NoDrawerTheme">
@@ -65,7 +65,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".activities.EmptyDeckActivity"
+            android:name=".decks_view.EmptyDeckActivity"
             android:theme="@style/NoDrawerTheme" />
     </application>
 

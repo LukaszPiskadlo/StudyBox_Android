@@ -1,4 +1,4 @@
-package com.blstream.studybox.activities;
+package com.blstream.studybox.decks_view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -27,9 +27,6 @@ import com.blstream.studybox.R;
 import com.blstream.studybox.auth.login.LoginInterface;
 import com.blstream.studybox.auth.login.LoginManager;
 import com.blstream.studybox.components.DrawerAdapter;
-import com.blstream.studybox.decks_view.DecksAdapter;
-import com.blstream.studybox.decks_view.DecksPresenter;
-import com.blstream.studybox.decks_view.DecksView;
 import com.blstream.studybox.model.database.Deck;
 import com.hannesdorfmann.mosby.mvp.lce.MvpLceActivity;
 

@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.blstream.studybox.auth.login.LoginInterface;
 import com.blstream.studybox.auth.login.LoginManager;
+import com.blstream.studybox.auth.login_view.LoginActivity;
+import com.blstream.studybox.decks_view.DecksActivity;
 
 public class SplashScreenActivity extends AppCompatActivity {
 

@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.blstream.studybox.R;
-import com.blstream.studybox.activities.EmptyDeckActivity;
 import com.blstream.studybox.components.ExamStartDialog;
 import com.blstream.studybox.model.database.Deck;
 

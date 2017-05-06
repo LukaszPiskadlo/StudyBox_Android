@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.blstream.studybox.activities.RegistrationActivity">
+    tools:context="com.blstream.studybox.auth.registration_view.RegistrationActivity">
 
     <ScrollView
         android:layout_width="match_parent"
