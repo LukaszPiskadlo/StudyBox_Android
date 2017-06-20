@@ -62,7 +62,12 @@ public class RegistrationActivity
             String password = inputPassword.getText().toString();
             String repeatPassword = inputRepeatPassword.getText().toString();
 
-            presenter.validateCredential(new AuthCredentials(email, password, repeatPassword));
+            final AuthCredentials credentials = new AuthCredentials.Builder()
+                    .setEmail(email)
+                    .setPassword(password)
+                    .setRepeatPassword(repeatPassword)
+                    .build();
+            presenter.validateCredential(credentials);
         }
     }
 

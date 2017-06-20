@@ -59,7 +59,12 @@ public class LoginActivity extends BaseAuthActivity<LoginView, LoginPresenter>
         if (connectionStatusReceiver.isConnected()) {
             String email = emailInput.getText().toString().trim();
             String password = passwordInput.getText().toString();
-            presenter.validateCredential(new AuthCredentials(email, password));
+
+            final AuthCredentials credentials = new AuthCredentials.Builder()
+                    .setEmail(email)
+                    .setPassword(password)
+                    .build();
+            presenter.validateCredential(credentials);
         }
     }
 

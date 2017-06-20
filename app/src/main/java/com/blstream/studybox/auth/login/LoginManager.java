@@ -72,6 +72,10 @@ public class LoginManager implements LoginInterface {
 
     @Override
     public AuthCredentials getCredentials() {
-        return new AuthCredentials(getUserId(), getUserEmail(), getUserPassword(), null);
+        return new AuthCredentials.Builder()
+                .setId(getUserId())
+                .setEmail(getUserEmail())
+                .setPassword(getUserPassword())
+                .build();
     }
 }

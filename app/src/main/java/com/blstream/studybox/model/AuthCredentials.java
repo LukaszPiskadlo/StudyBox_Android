@@ -17,22 +17,14 @@ public class AuthCredentials {
 
     private String repeatPassword;
 
-    public AuthCredentials(String email, String password)  {
-        this.email = email;
-        this.password = password;
+    private AuthCredentials() {
     }
 
-    public AuthCredentials(String email, String password, String repeatPassword) {
-        this.email = email;
-        this.password = password;
-        this.repeatPassword = repeatPassword;
-    }
-
-    public AuthCredentials(String id, String email, String password, @Nullable String repeatPassword) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.repeatPassword = repeatPassword;
+    private AuthCredentials(Builder builder) {
+        this.id = builder.id;
+        this.email = builder.email;
+        this.password = builder.password;
+        this.repeatPassword = builder.repeatPassword;
     }
 
     public String getId() {
@@ -54,5 +46,37 @@ public class AuthCredentials {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+
+    public static class Builder {
+        private String id;
+        private String email;
+        private String password;
+        private String repeatPassword;
+
+        public Builder setId(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder setEmail(String email) {
+            this.email = email;
+            return this;
+        }
+
+        public Builder setPassword(String password) {
+            this.password = password;
+            return this;
+        }
+
+        public Builder setRepeatPassword(String repeatPassword) {
+            this.repeatPassword = repeatPassword;
+            return this;
+        }
+
+        public AuthCredentials build() {
+            return new AuthCredentials(this);
+        }
     }
 }
